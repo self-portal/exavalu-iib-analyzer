@@ -1,0 +1,43 @@
+# Server Configuration
+server:
+    port: 9090
+#     port: 8079
+  # port: 443  # Port number for the server
+  # ssl:
+  #   key-alias: eia
+  #   key-store: classpath:eia-keystore.jks
+  #   key-store-type: JKS
+  #   key-password: 123456 # to be encrypted later
+
+
+# API Configuration
+apiPrefix: /api/          # API URL prefix
+securedString: htkpgx2472sz  # Security string
+
+# Spring Configuration
+spring:
+  # Servlet Multipart Configuration
+  servlet:
+    multipart:
+      max-request-size: 100MB
+      max-file-size: 100MB
+  
+  # Datasource Configuration
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver  # JDBC Driver class
+
+    # Local DB Configs
+#    url: jdbc:mysql://localhost:3306/exavalu_iib_analyzer_db?useSSL=false # Local Database URL
+#    username: root # Local Database username
+#    password: # Local Database password
+
+    # AWS-RDS DB Configs
+    url: jdbc:mysql://iibconversion.cjlogxh0nqwj.us-east-1.rds.amazonaws.com/exavalu_iib_analyzer_db?useSSL=false  # AWS-RDS Database URL
+    username: admin    # AWS-RDS Database username
+    password: exavalu! # AWS-RDS Database password
+
+# Root Directory Configuration
+rootDirectory: "/app/exavalu_iib_analyzer" # Path to the root directory
+
+# File Handling Configuration
+numberOfFilesToBeAllowed: 10 # Number of files to be allowed for uploading

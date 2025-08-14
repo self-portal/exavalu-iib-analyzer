@@ -1,0 +1,12 @@
+/my-activity:
+
+curl --location 'https://localhost/api/htkpgx2472sz/my-activity?user_name=ssh' \
+--header 'x-request-id: 1ed0ab9a-36d1-11ee-be56-0242ac120002'
+
+/health/db: [Check the database connection]
+
+curl --location 'https://localhost/api/htkpgx2472sz/health/db'
+
+/health: [Check the application health]
+
+curl --location 'https://localhost/api/htkpgx2472sz/health'

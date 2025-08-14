@@ -1,0 +1,898 @@
+{
+	"info": {
+		"_postman_id": "5538f7b2-dc53-43a5-8d42-7beb316e7fe1",
+		"name": "exavalu-iib-analyzer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20890760",
+		"_collection_link": "https://lunar-water-690617.postman.co/workspace/Exavalu-iib-analyzer-Workspace~d21983a3-c4c7-4d52-8f4c-58950366129b/collection/20890760-5538f7b2-dc53-43a5-8d42-7beb316e7fe1?action=share&source=collection_link&creator=20890760"
+	},
+	"item": [
+		{
+			"name": "LOCAL",
+			"item": [
+				{
+					"name": "Step-0 = /user-onboard",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-request-id",
+								"value": "1234",
+								"type": "default"
+							},
+							{
+								"key": "x-region",
+								"value": "India",
+								"type": "text"
+							},
+							{
+								"key": "x-consumer",
+								"value": "chrome",
+								"type": "text"
+							},
+							{
+								"key": "x-tracking-id",
+								"value": "0.0.0.0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\": \"Test\",\r\n    \"firstName\": \"Test\",\r\n    \"middleName\": null,\r\n    \"lastName\": \"Test\",\r\n    \"emailId\": \"test.test@exavalu.com\",\r\n    \"mobileNo\": \"1234567890\",\r\n    \"jobTitle\": \"Developer\",\r\n    \"region\": \"IN\",\r\n    \"company\": \"Exavalu\",\r\n    \"password\": \"abcd1234@\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/api/htkpgx2472sz/user-onboard",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"htkpgx2472sz",
+								"user-onboard"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Step-1 = /my-activity",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-request-id",
+								"value": "1ed0ab9a-36d1-11ee-be56-0242ac120002"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:9090/api/htkpgx2472sz/my-activity?user_name=admin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"htkpgx2472sz",
+								"my-activity"
+							],
+							"query": [
+								{
+									"key": "user_name",
+									"value": "admin"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Step-2 = /createJob",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-request-id",
+								"value": "1234"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"jobName\": \"AAA_Phase_103\"\r\n}\r\n"
+						},
+						"url": {
+							"raw": "http://localhost:9090/api/htkpgx2472sz/create-job?user_name=admin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"htkpgx2472sz",
+								"create-job"
+							],
+							"query": [
+								{
+									"key": "user_name",
+									"value": "admin"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Step-3 = /retrieveJob",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-request-id",
+								"value": "1234"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "is_filtered_sub_job",
+								"value": "true",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:9090/api/htkpgx2472sz/retrieve-jobs?user_name=admin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"htkpgx2472sz",
+								"retrieve-jobs"
+							],
+							"query": [
+								{
+									"key": "user_name",
+									"value": "admin"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Step-4 =/retrieveJobDetails",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-request-id",
+								"value": "1234"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "is_filtered_sub_job",
+								"value": "true",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:9090/api/htkpgx2472sz/retrieve-jobs-details?user_name=admin&job_name=AAA_Phase_103",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"htkpgx2472sz",
+								"retrieve-jobs-details"
+							],
+							"query": [
+								{
+									"key": "user_name",
+									"value": "admin"
+								},
+								{
+									"key": "job_name",
+									"value": "AAA_Phase_103"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Step-5 = /upload-source-files",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-request-id",
+								"value": "1234",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "projectFiles",
+									"type": "file",
+									"src": [
+										"/C:/Users/admin/Desktop/AAA_Projects/APPL_COB_EmailApproval.zip",
+										"/C:/Users/admin/Desktop/AAA_Projects/APPL_EntSvc_Membership.zip",
+										"/C:/Users/admin/Desktop/AAA_Projects/APPL_MO_HOME.zip"
+									]
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:9090/api/htkpgx2472sz/upload-source-files?user_name=admin&job_name=AAA_Phase_103&sub_job_name=subjob1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"htkpgx2472sz",
+								"upload-source-files"
+							],
+							"query": [
+								{
+									"key": "user_name",
+									"value": "admin"
+								},
+								{
+									"key": "job_name",
+									"value": "AAA_Phase_103"
+								},
+								{
+									"key": "sub_job_name",
+									"value": "subjob1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "/upload-project-files",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-request-id",
+										"value": "1234",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "projectFiles",
+											"type": "file",
+											"src": "/C:/Users/admin/Desktop/AAA_Projects/APPL_COB_EmailApproval.zip"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:9090/api/htkpgx2472sz/upload-source-files?user_name=rounaksaha&job_name=job1&sub_job_name=subjob1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9090",
+									"path": [
+										"api",
+										"htkpgx2472sz",
+										"upload-source-files"
+									],
+									"query": [
+										{
+											"key": "user_name",
+											"value": "rounaksaha"
+										},
+										{
+											"key": "job_name",
+											"value": "job1"
+										},
+										{
+											"key": "sub_job_name",
+											"value": "subjob1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "x-request-id",
+									"value": "1234"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "167"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 02 Sep 2023 10:24:32 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"timestamp\": \"2023-09-02 15:54:32.181\",\n        \"statusCode\": \"200\",\n        \"reasonPhrase\": \"OK\",\n        \"fileName\": \"APPL_Common_AgentBranchInfo\",\n        \"message\": \"Source file uploaded successfully\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Step-6 = /scan-source-files",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-request-id",
+								"value": "1234"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"jobId\": \"3\",\r\n        \"jobName\": \"AAA_Phase_103\",\r\n        \"jobDescription\": null,\r\n        \"subJobs\": [\r\n            {\r\n                \"subJobId\": \"3\",\r\n                \"subJobName\": \"subjob1\",\r\n                \"subJobDescription\": null,\r\n                \"isValid\": true,\r\n                \"sourceFiles\": [\r\n                    {\r\n                        \"sourceFileId\": \"4c96cfb0-6657-4f9d-966a-f9ae055b0315\",\r\n                        \"sourceFileName\": \"APPL_EntSvc_Membership\",\r\n                        \"isValid\": true,\r\n                        \"isScanned\": false\r\n                    },\r\n                    {\r\n                        \"sourceFileId\": \"5c68e991-b63d-4419-b0bd-033088176acf\",\r\n                        \"sourceFileName\": \"APPL_MO_HOME\",\r\n                        \"isValid\": true,\r\n                        \"isScanned\": false\r\n                    },\r\n                    {\r\n                        \"sourceFileId\": \"6f46b75b-d81d-4306-9d52-1f511f9d8add\",\r\n                        \"sourceFileName\": \"APPL_COB_EmailApproval\",\r\n                        \"isValid\": true,\r\n                        \"isScanned\": false\r\n                    }\r\n                ]\r\n            }\r\n        ]\r\n    }\r\n]"
+						},
+						"url": {
+							"raw": "http://localhost:9090/api/htkpgx2472sz/scan-source-files?user_name=rounaksaha",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"htkpgx2472sz",
+								"scan-source-files"
+							],
+							"query": [
+								{
+									"key": "user_name",
+									"value": "rounaksaha"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Step-7 (Optional)= /remove-source-files",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-request-id",
+								"value": "1234",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"jobId\": \"1\",\r\n    \"subJobs\": [\r\n        {\r\n            \"subJobId\": \"1\",\r\n            \"isDeleted\": false,\r\n            \"sourceFilesId\": [\"09710f2a-e02c-45d8-81ef-17c05ffcdbfe\", \"0be0b473-3bf5-4299-aecf-31eb30d454f3\", \"1061860a-ae6c-4d3b-b801-df0649145375\", \"c4039c96-5eb8-49bd-98b2-581722a40896\", \"d0ce416f-7302-4597-91aa-72ef20b881ee\", \"e9e49bfb-ecd4-412a-83bc-1cac645b99e7\"]\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/api/htkpgx2472sz/remove-source-files?user_name=admin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"htkpgx2472sz",
+								"remove-source-files"
+							],
+							"query": [
+								{
+									"key": "user_name",
+									"value": "admin"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Step-8 = /source-file-scores",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-request-id",
+								"value": "1234",
+								"type": "default"
+							},
+							{
+								"key": "x-region",
+								"value": "India",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "x-consumer",
+								"value": "chrome",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "x-tracking-id",
+								"value": "0.0.0.0",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"jobId\": \"3\",\r\n    \"jobName\": \"AAA_Phase_103\",\r\n    \"jobDescription\": null,\r\n    \"subJobs\": [\r\n        {\r\n            \"subJobId\": \"3\",\r\n            \"subJobName\": \"subjob1\",\r\n            \"subJobDescription\": null,\r\n            \"isValid\": true,\r\n            \"sourceFiles\": [\r\n                {\r\n                    \"sourceFileId\": \"4c96cfb0-6657-4f9d-966a-f9ae055b0315\",\r\n                    \"sourceFileName\": \"APPL_EntSvc_Membership\",\r\n                    \"isValid\": true,\r\n                    \"isScanned\": true\r\n                },\r\n                {\r\n                    \"sourceFileId\": \"5c68e991-b63d-4419-b0bd-033088176acf\",\r\n                    \"sourceFileName\": \"APPL_MO_HOME\",\r\n                    \"isValid\": true,\r\n                    \"isScanned\": true\r\n                },\r\n                {\r\n                    \"sourceFileId\": \"6f46b75b-d81d-4306-9d52-1f511f9d8add\",\r\n                    \"sourceFileName\": \"APPL_COB_EmailApproval\",\r\n                    \"isValid\": true,\r\n                    \"isScanned\": true\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/api/htkpgx2472sz/source-file-scores?user_name=rounaksaha",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"htkpgx2472sz",
+								"source-file-scores"
+							],
+							"query": [
+								{
+									"key": "user_name",
+									"value": "rounaksaha"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Step-9 = /dependency-network",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-request-id",
+								"value": "1234",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n\t{\r\n\t\t\"sourceFileMasterId\": \"1_1_a96cf791-e6da-40fe-9774-a015130a6a27\",\r\n\t\t\"sourceFileName\": \"APPL_Common_AgentBranchInfo\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFileMasterId\": \"1_1_aec127fd-8929-4dd5-a256-2685811aa44f\",\r\n\t\t\"sourceFileName\": \"APPL_Common_Communication\"\r\n\t},\r\n\t{\r\n\t\t\"sourceFileMasterId\": \"1_1_d2aff401-84be-48d6-a0d3-de809c31e37d\",\r\n\t\t\"sourceFileName\": \"APPL_COB_EmailApproval\"\r\n\t}\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/api/htkpgx2472sz/dependency-network?user_name=admin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"htkpgx2472sz",
+								"dependency-network"
+							],
+							"query": [
+								{
+									"key": "user_name",
+									"value": "admin"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Step-10 = /source-file-flow",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-request-id",
+								"value": "1234",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:9090/api/htkpgx2472sz/source-file-flow?user_name=admin&source_file_id=1_1_14f52aa8-18b6-4510-a7ae-bb4ae3dcb40d",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"htkpgx2472sz",
+								"source-file-flow"
+							],
+							"query": [
+								{
+									"key": "user_name",
+									"value": "admin"
+								},
+								{
+									"key": "source_file_id",
+									"value": "1_1_14f52aa8-18b6-4510-a7ae-bb4ae3dcb40d"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Step-10 = /source-file-flow",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-request-id",
+										"value": "1234",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:9090/api/htkpgx2472sz/source-file-flow?user_name=admin&source_file_id=66_121_30d89131-11cb-42c8-aa85-167659103a8d",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9090",
+									"path": [
+										"api",
+										"htkpgx2472sz",
+										"source-file-flow"
+									],
+									"query": [
+										{
+											"key": "user_name",
+											"value": "admin"
+										},
+										{
+											"key": "source_file_id",
+											"value": "66_121_30d89131-11cb-42c8-aa85-167659103a8d"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "18415"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 15 Sep 2023 19:49:23 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"applicationName\": \"APPL_Common_AgentBranchInfo\",\n    \"nodes\": [\n        {\n            \"id\": \"APPL_Common_AgentBranchInfo:APPL_Common_AgentBranchInfo.msgflow:FCMComposite_1_1\",\n            \"label\": \"HTTP Input\"\n        },\n        {\n            \"id\": \"APPL_Common_AgentBranchInfo:APPL_Common_AgentBranchInfo.msgflow:FCMComposite_1_2\",\n            \"label\": \"Route To Label\"\n        },\n        {\n            \"id\": \"APPL_Common_AgentBranchInfo:APPL_Common_AgentBranchInfo.msgflow:FCMComposite_1_4\",\n            \"label\": \"APPL_Common_AgentBranchInfoInputCatchHandler\"\n        },\n        {\n            \"id\": \"APPL_Common_AgentBranchInfo:APPL_Common_AgentBranchInfo.msgflow:FCMComposite_1_5\",\n            \"label\": \"APPL_Common_AgentBranchInfoInputFailureHandler\"\n        },\n        {\n            \"id\": \"APPL_Common_AgentBranchInfo:APPL_Common_AgentBranchInfo.msgflow:FCMComposite_1_6\",\n            \"label\": \"APPL_Common_AgentBranchInfoInputTimeoutHandler\"\n        },\n        {\n            \"id\": \"APPL_Common_AgentBranchInfo:APPL_Common_AgentBranchInfo.msgflow:FCMComposite_1_3\",\n            \"label\": \"HTTP Reply\"\n        },\n        {\n            \"id\": \"APPL_Common_AgentBranchInfo:APPL_Common_AgentBranchInfoInputCatchHandler.subflow:InTerminal.Input_1\",\n            \"label\": \"Input\"\n        },\n        {\n            \"id\": \"APPL_Common_AgentBranchInfo:APPL_Common_AgentBranchInfoInputCatchHandler.subflow:FCMComposite_1_1\",\n            \"label\": \"CommonUtil_HandleJsonErrorwithTimeout\"\n        },\n        {\n            \"id\": \"APPL_Common_AgentBranchInfo:APPL_Common_AgentBranchInfoInputCatchHandler.subflow:FCMComposite_1_3\",\n            \"label\": \"Flow Order\"\n        },\n        {\n            \"id\": \"APPL_Common_AgentBranchInfo:APPL_Common_AgentBranchInfoInputCatchHandler.subflow:FCMComposite_1_2\",\n            \"label\": \"CommonComponent_Audit\"\n        },\n        {\n            \"id\": \"APPL_Common_AgentBranchInfo:APPL_Common_AgentBranchInfoInputCatchHandler.subflow:OutTerminal.Output_1\",\n            \"label\": \"Output\"\n        },\n        {\n            \"id\": \"ESB_COMMON_UTIL_MFP:CommonUtil_HandleJsonErrorwithTimeout.subflow:InTerminal.Input\",\n            \"label\": \"InTerminal.Input\"\n        },\n        {\n            \"id\": \"ESB_COMMON_UTIL_MFP:CommonUtil_HandleJsonErrorwithTimeout.subflow:FCMComposite_1_1\",\n            \"label\": \"Compute\"\n        },\n        {\n            \"id\": \"ESB_COMMON_UTIL_MFP:CommonUtil_HandleJsonErrorwithTimeout.subflow:OutTerminal.Output\",\n            \"label\": \"OutTerminal.Output\"\n        },\n        {\n            \"id\": \"ESB_COMMON_UTIL_MFP:CommonUtil_HandleJsonErrorwithTimeout.subflow:OutTerminal.Output1\",\n            \"label\": \"OutTerminal.Audit\"\n        },\n        {\n            \"id\": \"ESB_COMMON_UTIL_MFP:CommonComponent_Audit.subflow:InTerminal.Input\",\n            \"label\": \"InTerminal.Input\"\n        },\n        {\n            \"id\": \"ESB_COMMON_UTIL_MFP:CommonComponent_Audit.subflow:FCMComposite_1_1\",\n            \"label\": \"LogDetails\"\n        },\n        {\n            \"id\": \"ESB_COMMON_UTIL_MFP:CommonComponent_Audit.subflow:FCMComposite_1_2\",\n            \"label\": \"MQ Output\"\n        },\n        {\n            \"id\": \"APPL_Common_AgentBranchInfo:APPL_Common_AgentBranchInfoInputFailureHandler.subflow:InTerminal.Input_1\",\n            \"label\": \"Input\"\n        },\n        {\n            \"id\": \"APPL_Common_AgentBranchInfo:APPL_Common_AgentBranchInfoInputFailureHandler.subflow:FCMComposite_1_1\",\n            \"label\": \"CommonUtil_HandleJsonErrorwithTimeout\"\n        },\n        {\n            \"id\": \"APPL_Common_AgentBranchInfo:APPL_Common_AgentBranchInfoInputFailureHandler.subflow:FCMComposite_1_2\",\n            \"label\": \"Flow Order\"\n        },\n        {\n            \"id\": \"APPL_Common_AgentBranchInfo:APPL_Common_AgentBranchInfoInputFailureHandler.subflow:FCMComposite_1_3\",\n            \"label\": \"CommonComponent_Audit\"\n        },\n        {\n            \"id\": \"APPL_Common_AgentBranchInfo:APPL_Common_AgentBranchInfoInputFailureHandler.subflow:OutTerminal.Output_1\",\n            \"label\": \"Output\"\n        },\n        {\n            \"id\": \"APPL_Common_AgentBranchInfo:APPL_Common_AgentBranchInfoInputTimeoutHandler.subflow:InTerminal.Input_1\",\n            \"label\": \"Input\"\n        },\n        {\n            \"id\": \"APPL_Common_AgentBranchInfo:APPL_Common_AgentBranchInfoInputTimeoutHandler.subflow:FCMComposite_1_1\",\n            \"label\": \"CommonUtil_HandleJSONTimeout\"\n        },\n        {\n            \"id\": \"APPL_Common_AgentBranchInfo:APPL_Common_AgentBranchInfoInputTimeoutHandler.subflow:OutTerminal.Output_1\",\n            \"label\": \"Output\"\n        },\n        {\n            \"id\": \"ESB_COMMON_UTIL_MFP:CommonUtil_HandleJSONTimeout.subflow:InTerminal.Input\",\n            \"label\": \"InTerminal.Input\"\n        },\n        {\n            \"id\": \"ESB_COMMON_UTIL_MFP:CommonUtil_HandleJSONTimeout.subflow:FCMComposite_1_1\",\n            \"label\": \"Compute\"\n        },\n        {\n            \"id\": \"ESB_COMMON_UTIL_MFP:CommonUtil_HandleJSONTimeout.subflow:OutTerminal.Output\",\n            \"label\": \"OutTerminal.Output\"\n        },\n        {\n            \"id\": \"APPL_Common_AgentBranchInfo:APPL_Common_AgentBranchInfo.msgflow:FCMComposite_1_7\",\n            \"label\": \"getAgentBranchDetails (Label)\"\n        },\n        {\n            \"id\": \"APPL_Common_AgentBranchInfo:APPL_Common_AgentBranchInfo.msgflow:FCMComposite_1_8\",\n            \"label\": \"getAgentBranchDetails (Implementation)\"\n        },\n        {\n            \"id\": \"APPL_Common_AgentBranchInfo:getAgentBranchDetails.subflow:InTerminal.Input_1\",\n            \"label\": \"Input\"\n        },\n        {\n            \"id\": \"APPL_Common_AgentBranchInfo:getAgentBranchDetails.subflow:FCMComposite_1_1\",\n            \"label\": \"CommonComponent_SetLogDetails\"\n        },\n        {\n            \"id\": \"APPL_Common_AgentBranchInfo:getAgentBranchDetails.subflow:FCMComposite_1_2\",\n            \"label\": \"BuildRequest\"\n        },\n        {\n            \"id\": \"APPL_Common_AgentBranchInfo:getAgentBranchDetails.subflow:FCMComposite_1_4\",\n            \"label\": \"RME88AAC_CICS\"\n        },\n        {\n            \"id\": \"APPL_Common_AgentBranchInfo:getAgentBranchDetails.subflow:FCMComposite_1_3\",\n            \"label\": \"BuildResponse\"\n        },\n        {\n            \"id\": \"APPL_Common_AgentBranchInfo:getAgentBranchDetails.subflow:FCMComposite_1_5\",\n            \"label\": \"Flow Order\"\n        },\n        {\n            \"id\": \"APPL_Common_AgentBranchInfo:getAgentBranchDetails.subflow:OutTerminal.Output_1\",\n            \"label\": \"Output\"\n        },\n        {\n            \"id\": \"APPL_Common_AgentBranchInfo:getAgentBranchDetails.subflow:FCMComposite_1_6\",\n            \"label\": \"CommonComponent_Audit\"\n        },\n        {\n            \"id\": \"ESB_COMMON_UTIL_MFP:CommonComponent_SetLogDetails.subflow:InTerminal.Input\",\n            \"label\": \"InTerminal.Input\"\n        },\n        {\n            \"id\": \"ESB_COMMON_UTIL_MFP:CommonComponent_SetLogDetails.subflow:FCMComposite_1_1\",\n            \"label\": \"SetLogDetails\"\n        },\n        {\n            \"id\": \"ESB_COMMON_UTIL_MFP:CommonComponent_SetLogDetails.subflow:OutTerminal.Output\",\n            \"label\": \"OutTerminal.Output\"\n        },\n        {\n            \"id\": \"LIB_Common_RME88AAC:RME88AAC_CICS.subflow:InTerminal.Input\",\n            \"label\": \"InTerminal.Input\"\n        },\n        {\n            \"id\": \"LIB_Common_RME88AAC:RME88AAC_CICS.subflow:FCMComposite_1_1\",\n            \"label\": \"RME88AAC\"\n        },\n        {\n            \"id\": \"LIB_Common_RME88AAC:RME88AAC_CICS.subflow:OutTerminal.Output\",\n            \"label\": \"OutTerminal.Failure\"\n        },\n        {\n            \"id\": \"LIB_Common_RME88AAC:RME88AAC_CICS.subflow:OutTerminal.Output1\",\n            \"label\": \"OutTerminal.Output\"\n        },\n        {\n            \"id\": \"LIB_Common_RME88AAC:RME88AAC_CICS.subflow:OutTerminal.Output2\",\n            \"label\": \"OutTerminal.Timeout\"\n        },\n        {\n            \"id\": \"APPL_Common_AgentBranchInfo:APPL_Common_AgentBranchInfo.msgflow:FCMComposite_1_9\",\n            \"label\": \"retrieveAgentBranchDetails (Label)\"\n        },\n        {\n            \"id\": \"APPL_Common_AgentBranchInfo:APPL_Common_AgentBranchInfo.msgflow:FCMComposite_1_10\",\n            \"label\": \"retrieveAgentBranchDetails (Implementation)\"\n        },\n        {\n            \"id\": \"APPL_Common_AgentBranchInfo:retrieveAgentBranchDetails.subflow:InTerminal.Input_1\",\n            \"label\": \"Input\"\n        },\n        {\n            \"id\": \"APPL_Common_AgentBranchInfo:retrieveAgentBranchDetails.subflow:FCMComposite_1_2\",\n            \"label\": \"CommonComponent_SetLogDetails\"\n        },\n        {\n            \"id\": \"APPL_Common_AgentBranchInfo:retrieveAgentBranchDetails.subflow:FCMComposite_1_3\",\n            \"label\": \"BuildRequest\"\n        },\n        {\n            \"id\": \"APPL_Common_AgentBranchInfo:retrieveAgentBranchDetails.subflow:FCMComposite_1_1\",\n            \"label\": \"RME88AAC_CICS\"\n        },\n        {\n            \"id\": \"APPL_Common_AgentBranchInfo:retrieveAgentBranchDetails.subflow:FCMComposite_1_4\",\n            \"label\": \"BuildResponse\"\n        },\n        {\n            \"id\": \"APPL_Common_AgentBranchInfo:retrieveAgentBranchDetails.subflow:FCMComposite_1_6\",\n            \"label\": \"Flow Order\"\n        },\n        {\n            \"id\": \"APPL_Common_AgentBranchInfo:retrieveAgentBranchDetails.subflow:OutTerminal.Output_1\",\n            \"label\": \"Output\"\n        },\n        {\n            \"id\": \"APPL_Common_AgentBranchInfo:retrieveAgentBranchDetails.subflow:FCMComposite_1_5\",\n            \"label\": \"CommonComponent_Audit\"\n        }\n    ],\n    \"edges\": [\n        [\n            \"APPL_Common_AgentBranchInfo:APPL_Common_AgentBranchInfo.msgflow:FCMComposite_1_1\",\n            \"APPL_Common_AgentBranchInfo:APPL_Common_AgentBranchInfo.msgflow:FCMComposite_1_2\"\n        ],\n        [\n            \"APPL_Common_AgentBranchInfo:APPL_Common_AgentBranchInfo.msgflow:FCMComposite_1_2\",\n            \"APPL_Common_AgentBranchInfo:APPL_Common_AgentBranchInfo.msgflow:FCMComposite_1_7\"\n        ],\n        [\n            \"APPL_Common_AgentBranchInfo:APPL_Common_AgentBranchInfo.msgflow:FCMComposite_1_2\",\n            \"APPL_Common_AgentBranchInfo:APPL_Common_AgentBranchInfo.msgflow:FCMComposite_1_9\"\n        ],\n        [\n            \"APPL_Common_AgentBranchInfo:APPL_Common_AgentBranchInfo.msgflow:FCMComposite_1_1\",\n            \"APPL_Common_AgentBranchInfo:APPL_Common_AgentBranchInfo.msgflow:FCMComposite_1_4\"\n        ],\n        [\n            \"APPL_Common_AgentBranchInfo:APPL_Common_AgentBranchInfo.msgflow:FCMComposite_1_4\",\n            \"APPL_Common_AgentBranchInfo:APPL_Common_AgentBranchInfoInputCatchHandler.subflow:InTerminal.Input_1\"\n        ],\n        [\n            \"APPL_Common_AgentBranchInfo:APPL_Common_AgentBranchInfo.msgflow:FCMComposite_1_1\",\n            \"APPL_Common_AgentBranchInfo:APPL_Common_AgentBranchInfo.msgflow:FCMComposite_1_5\"\n        ],\n        [\n            \"APPL_Common_AgentBranchInfo:APPL_Common_AgentBranchInfo.msgflow:FCMComposite_1_5\",\n            \"APPL_Common_AgentBranchInfo:APPL_Common_AgentBranchInfoInputFailureHandler.subflow:InTerminal.Input_1\"\n        ],\n        [\n            \"APPL_Common_AgentBranchInfo:APPL_Common_AgentBranchInfo.msgflow:FCMComposite_1_1\",\n            \"APPL_Common_AgentBranchInfo:APPL_Common_AgentBranchInfo.msgflow:FCMComposite_1_6\"\n        ],\n        [\n            \"APPL_Common_AgentBranchInfo:APPL_Common_AgentBranchInfo.msgflow:FCMComposite_1_6\",\n            \"APPL_Common_AgentBranchInfo:APPL_Common_AgentBranchInfoInputTimeoutHandler.subflow:InTerminal.Input_1\"\n        ],\n        [\n            \"APPL_Common_AgentBranchInfo:APPL_Common_AgentBranchInfo.msgflow:FCMComposite_1_4\",\n            \"APPL_Common_AgentBranchInfo:APPL_Common_AgentBranchInfo.msgflow:FCMComposite_1_3\"\n        ],\n        [\n            \"APPL_Common_AgentBranchInfo:APPL_Common_AgentBranchInfo.msgflow:FCMComposite_1_5\",\n            \"APPL_Common_AgentBranchInfo:APPL_Common_AgentBranchInfo.msgflow:FCMComposite_1_3\"\n        ],\n        [\n            \"APPL_Common_AgentBranchInfo:APPL_Common_AgentBranchInfo.msgflow:FCMComposite_1_6\",\n            \"APPL_Common_AgentBranchInfo:APPL_Common_AgentBranchInfo.msgflow:FCMComposite_1_3\"\n        ],\n        [\n            \"APPL_Common_AgentBranchInfo:APPL_Common_AgentBranchInfoInputCatchHandler.subflow:InTerminal.Input_1\",\n            \"APPL_Common_AgentBranchInfo:APPL_Common_AgentBranchInfoInputCatchHandler.subflow:FCMComposite_1_1\"\n        ],\n        [\n            \"APPL_Common_AgentBranchInfo:APPL_Common_AgentBranchInfoInputCatchHandler.subflow:FCMComposite_1_1\",\n            \"ESB_COMMON_UTIL_MFP:CommonUtil_HandleJsonErrorwithTimeout.subflow:InTerminal.Input\"\n        ],\n        [\n            \"APPL_Common_AgentBranchInfo:APPL_Common_AgentBranchInfoInputCatchHandler.subflow:FCMComposite_1_1\",\n            \"APPL_Common_AgentBranchInfo:APPL_Common_AgentBranchInfoInputCatchHandler.subflow:FCMComposite_1_3\"\n        ],\n        [\n            \"APPL_Common_AgentBranchInfo:APPL_Common_AgentBranchInfoInputCatchHandler.subflow:FCMComposite_1_1\",\n            \"APPL_Common_AgentBranchInfo:APPL_Common_AgentBranchInfoInputCatchHandler.subflow:FCMComposite_1_2\"\n        ],\n        [\n            \"APPL_Common_AgentBranchInfo:APPL_Common_AgentBranchInfoInputCatchHandler.subflow:FCMComposite_1_2\",\n            \"ESB_COMMON_UTIL_MFP:CommonComponent_Audit.subflow:InTerminal.Input\"\n        ],\n        [\n            \"APPL_Common_AgentBranchInfo:APPL_Common_AgentBranchInfoInputCatchHandler.subflow:FCMComposite_1_3\",\n            \"APPL_Common_AgentBranchInfo:APPL_Common_AgentBranchInfoInputCatchHandler.subflow:OutTerminal.Output_1\"\n        ],\n        [\n            \"APPL_Common_AgentBranchInfo:APPL_Common_AgentBranchInfoInputCatchHandler.subflow:FCMComposite_1_3\",\n            \"APPL_Common_AgentBranchInfo:APPL_Common_AgentBranchInfoInputCatchHandler.subflow:FCMComposite_1_2\"\n        ],\n        [\n            \"ESB_COMMON_UTIL_MFP:CommonUtil_HandleJsonErrorwithTimeout.subflow:InTerminal.Input\",\n            \"ESB_COMMON_UTIL_MFP:CommonUtil_HandleJsonErrorwithTimeout.subflow:FCMComposite_1_1\"\n        ],\n        [\n            \"ESB_COMMON_UTIL_MFP:CommonUtil_HandleJsonErrorwithTimeout.subflow:FCMComposite_1_1\",\n            \"ESB_COMMON_UTIL_MFP:CommonUtil_HandleJsonErrorwithTimeout.subflow:OutTerminal.Output\"\n        ],\n        [\n            \"ESB_COMMON_UTIL_MFP:CommonUtil_HandleJsonErrorwithTimeout.subflow:FCMComposite_1_1\",\n            \"ESB_COMMON_UTIL_MFP:CommonUtil_HandleJsonErrorwithTimeout.subflow:OutTerminal.Output1\"\n        ],\n        [\n            \"ESB_COMMON_UTIL_MFP:CommonComponent_Audit.subflow:InTerminal.Input\",\n            \"ESB_COMMON_UTIL_MFP:CommonComponent_Audit.subflow:FCMComposite_1_1\"\n        ],\n        [\n            \"ESB_COMMON_UTIL_MFP:CommonComponent_Audit.subflow:FCMComposite_1_1\",\n            \"ESB_COMMON_UTIL_MFP:CommonComponent_Audit.subflow:FCMComposite_1_2\"\n        ],\n        [\n            \"APPL_Common_AgentBranchInfo:APPL_Common_AgentBranchInfoInputFailureHandler.subflow:InTerminal.Input_1\",\n            \"APPL_Common_AgentBranchInfo:APPL_Common_AgentBranchInfoInputFailureHandler.subflow:FCMComposite_1_1\"\n        ],\n        [\n            \"APPL_Common_AgentBranchInfo:APPL_Common_AgentBranchInfoInputFailureHandler.subflow:FCMComposite_1_1\",\n            \"ESB_COMMON_UTIL_MFP:CommonUtil_HandleJsonErrorwithTimeout.subflow:InTerminal.Input\"\n        ],\n        [\n            \"APPL_Common_AgentBranchInfo:APPL_Common_AgentBranchInfoInputFailureHandler.subflow:FCMComposite_1_1\",\n            \"APPL_Common_AgentBranchInfo:APPL_Common_AgentBranchInfoInputFailureHandler.subflow:FCMComposite_1_2\"\n        ],\n        [\n            \"APPL_Common_AgentBranchInfo:APPL_Common_AgentBranchInfoInputFailureHandler.subflow:FCMComposite_1_1\",\n            \"APPL_Common_AgentBranchInfo:APPL_Common_AgentBranchInfoInputFailureHandler.subflow:FCMComposite_1_3\"\n        ],\n        [\n            \"APPL_Common_AgentBranchInfo:APPL_Common_AgentBranchInfoInputFailureHandler.subflow:FCMComposite_1_3\",\n            \"ESB_COMMON_UTIL_MFP:CommonComponent_Audit.subflow:InTerminal.Input\"\n        ],\n        [\n            \"APPL_Common_AgentBranchInfo:APPL_Common_AgentBranchInfoInputFailureHandler.subflow:FCMComposite_1_2\",\n            \"APPL_Common_AgentBranchInfo:APPL_Common_AgentBranchInfoInputFailureHandler.subflow:OutTerminal.Output_1\"\n        ],\n        [\n            \"APPL_Common_AgentBranchInfo:APPL_Common_AgentBranchInfoInputFailureHandler.subflow:FCMComposite_1_2\",\n            \"APPL_Common_AgentBranchInfo:APPL_Common_AgentBranchInfoInputFailureHandler.subflow:FCMComposite_1_3\"\n        ],\n        [\n            \"APPL_Common_AgentBranchInfo:APPL_Common_AgentBranchInfoInputTimeoutHandler.subflow:InTerminal.Input_1\",\n            \"APPL_Common_AgentBranchInfo:APPL_Common_AgentBranchInfoInputTimeoutHandler.subflow:FCMComposite_1_1\"\n        ],\n        [\n            \"APPL_Common_AgentBranchInfo:APPL_Common_AgentBranchInfoInputTimeoutHandler.subflow:FCMComposite_1_1\",\n            \"ESB_COMMON_UTIL_MFP:CommonUtil_HandleJSONTimeout.subflow:InTerminal.Input\"\n        ],\n        [\n            \"APPL_Common_AgentBranchInfo:APPL_Common_AgentBranchInfoInputTimeoutHandler.subflow:FCMComposite_1_1\",\n            \"APPL_Common_AgentBranchInfo:APPL_Common_AgentBranchInfoInputTimeoutHandler.subflow:OutTerminal.Output_1\"\n        ],\n        [\n            \"ESB_COMMON_UTIL_MFP:CommonUtil_HandleJSONTimeout.subflow:InTerminal.Input\",\n            \"ESB_COMMON_UTIL_MFP:CommonUtil_HandleJSONTimeout.subflow:FCMComposite_1_1\"\n        ],\n        [\n            \"ESB_COMMON_UTIL_MFP:CommonUtil_HandleJSONTimeout.subflow:FCMComposite_1_1\",\n            \"ESB_COMMON_UTIL_MFP:CommonUtil_HandleJSONTimeout.subflow:OutTerminal.Output\"\n        ],\n        [\n            \"APPL_Common_AgentBranchInfo:APPL_Common_AgentBranchInfo.msgflow:FCMComposite_1_7\",\n            \"APPL_Common_AgentBranchInfo:APPL_Common_AgentBranchInfo.msgflow:FCMComposite_1_8\"\n        ],\n        [\n            \"APPL_Common_AgentBranchInfo:APPL_Common_AgentBranchInfo.msgflow:FCMComposite_1_8\",\n            \"APPL_Common_AgentBranchInfo:getAgentBranchDetails.subflow:InTerminal.Input_1\"\n        ],\n        [\n            \"APPL_Common_AgentBranchInfo:APPL_Common_AgentBranchInfo.msgflow:FCMComposite_1_8\",\n            \"APPL_Common_AgentBranchInfo:APPL_Common_AgentBranchInfo.msgflow:FCMComposite_1_3\"\n        ],\n        [\n            \"APPL_Common_AgentBranchInfo:getAgentBranchDetails.subflow:InTerminal.Input_1\",\n            \"APPL_Common_AgentBranchInfo:getAgentBranchDetails.subflow:FCMComposite_1_1\"\n        ],\n        [\n            \"APPL_Common_AgentBranchInfo:getAgentBranchDetails.subflow:FCMComposite_1_1\",\n            \"ESB_COMMON_UTIL_MFP:CommonComponent_SetLogDetails.subflow:InTerminal.Input\"\n        ],\n        [\n            \"APPL_Common_AgentBranchInfo:getAgentBranchDetails.subflow:FCMComposite_1_1\",\n            \"APPL_Common_AgentBranchInfo:getAgentBranchDetails.subflow:FCMComposite_1_2\"\n        ],\n        [\n            \"APPL_Common_AgentBranchInfo:getAgentBranchDetails.subflow:FCMComposite_1_2\",\n            \"APPL_Common_AgentBranchInfo:getAgentBranchDetails.subflow:FCMComposite_1_4\"\n        ],\n        [\n            \"APPL_Common_AgentBranchInfo:getAgentBranchDetails.subflow:FCMComposite_1_4\",\n            \"LIB_Common_RME88AAC:RME88AAC_CICS.subflow:InTerminal.Input\"\n        ],\n        [\n            \"APPL_Common_AgentBranchInfo:getAgentBranchDetails.subflow:FCMComposite_1_4\",\n            \"APPL_Common_AgentBranchInfo:getAgentBranchDetails.subflow:FCMComposite_1_3\"\n        ],\n        [\n            \"APPL_Common_AgentBranchInfo:getAgentBranchDetails.subflow:FCMComposite_1_3\",\n            \"APPL_Common_AgentBranchInfo:getAgentBranchDetails.subflow:FCMComposite_1_5\"\n        ],\n        [\n            \"APPL_Common_AgentBranchInfo:getAgentBranchDetails.subflow:FCMComposite_1_5\",\n            \"APPL_Common_AgentBranchInfo:getAgentBranchDetails.subflow:OutTerminal.Output_1\"\n        ],\n        [\n            \"APPL_Common_AgentBranchInfo:getAgentBranchDetails.subflow:FCMComposite_1_5\",\n            \"APPL_Common_AgentBranchInfo:getAgentBranchDetails.subflow:FCMComposite_1_6\"\n        ],\n        [\n            \"APPL_Common_AgentBranchInfo:getAgentBranchDetails.subflow:FCMComposite_1_6\",\n            \"ESB_COMMON_UTIL_MFP:CommonComponent_Audit.subflow:InTerminal.Input\"\n        ],\n        [\n            \"ESB_COMMON_UTIL_MFP:CommonComponent_SetLogDetails.subflow:InTerminal.Input\",\n            \"ESB_COMMON_UTIL_MFP:CommonComponent_SetLogDetails.subflow:FCMComposite_1_1\"\n        ],\n        [\n            \"ESB_COMMON_UTIL_MFP:CommonComponent_SetLogDetails.subflow:FCMComposite_1_1\",\n            \"ESB_COMMON_UTIL_MFP:CommonComponent_SetLogDetails.subflow:OutTerminal.Output\"\n        ],\n        [\n            \"LIB_Common_RME88AAC:RME88AAC_CICS.subflow:InTerminal.Input\",\n            \"LIB_Common_RME88AAC:RME88AAC_CICS.subflow:FCMComposite_1_1\"\n        ],\n        [\n            \"LIB_Common_RME88AAC:RME88AAC_CICS.subflow:FCMComposite_1_1\",\n            \"LIB_Common_RME88AAC:RME88AAC_CICS.subflow:OutTerminal.Output\"\n        ],\n        [\n            \"LIB_Common_RME88AAC:RME88AAC_CICS.subflow:FCMComposite_1_1\",\n            \"LIB_Common_RME88AAC:RME88AAC_CICS.subflow:OutTerminal.Output1\"\n        ],\n        [\n            \"LIB_Common_RME88AAC:RME88AAC_CICS.subflow:FCMComposite_1_1\",\n            \"LIB_Common_RME88AAC:RME88AAC_CICS.subflow:OutTerminal.Output2\"\n        ],\n        [\n            \"APPL_Common_AgentBranchInfo:APPL_Common_AgentBranchInfo.msgflow:FCMComposite_1_9\",\n            \"APPL_Common_AgentBranchInfo:APPL_Common_AgentBranchInfo.msgflow:FCMComposite_1_10\"\n        ],\n        [\n            \"APPL_Common_AgentBranchInfo:APPL_Common_AgentBranchInfo.msgflow:FCMComposite_1_10\",\n            \"APPL_Common_AgentBranchInfo:retrieveAgentBranchDetails.subflow:InTerminal.Input_1\"\n        ],\n        [\n            \"APPL_Common_AgentBranchInfo:APPL_Common_AgentBranchInfo.msgflow:FCMComposite_1_10\",\n            \"APPL_Common_AgentBranchInfo:APPL_Common_AgentBranchInfo.msgflow:FCMComposite_1_3\"\n        ],\n        [\n            \"APPL_Common_AgentBranchInfo:retrieveAgentBranchDetails.subflow:InTerminal.Input_1\",\n            \"APPL_Common_AgentBranchInfo:retrieveAgentBranchDetails.subflow:FCMComposite_1_2\"\n        ],\n        [\n            \"APPL_Common_AgentBranchInfo:retrieveAgentBranchDetails.subflow:FCMComposite_1_2\",\n            \"ESB_COMMON_UTIL_MFP:CommonComponent_SetLogDetails.subflow:InTerminal.Input\"\n        ],\n        [\n            \"APPL_Common_AgentBranchInfo:retrieveAgentBranchDetails.subflow:FCMComposite_1_2\",\n            \"APPL_Common_AgentBranchInfo:retrieveAgentBranchDetails.subflow:FCMComposite_1_3\"\n        ],\n        [\n            \"APPL_Common_AgentBranchInfo:retrieveAgentBranchDetails.subflow:FCMComposite_1_3\",\n            \"APPL_Common_AgentBranchInfo:retrieveAgentBranchDetails.subflow:FCMComposite_1_1\"\n        ],\n        [\n            \"APPL_Common_AgentBranchInfo:retrieveAgentBranchDetails.subflow:FCMComposite_1_1\",\n            \"LIB_Common_RME88AAC:RME88AAC_CICS.subflow:InTerminal.Input\"\n        ],\n        [\n            \"APPL_Common_AgentBranchInfo:retrieveAgentBranchDetails.subflow:FCMComposite_1_1\",\n            \"APPL_Common_AgentBranchInfo:retrieveAgentBranchDetails.subflow:FCMComposite_1_4\"\n        ],\n        [\n            \"APPL_Common_AgentBranchInfo:retrieveAgentBranchDetails.subflow:FCMComposite_1_4\",\n            \"APPL_Common_AgentBranchInfo:retrieveAgentBranchDetails.subflow:FCMComposite_1_6\"\n        ],\n        [\n            \"APPL_Common_AgentBranchInfo:retrieveAgentBranchDetails.subflow:FCMComposite_1_6\",\n            \"APPL_Common_AgentBranchInfo:retrieveAgentBranchDetails.subflow:OutTerminal.Output_1\"\n        ],\n        [\n            \"APPL_Common_AgentBranchInfo:retrieveAgentBranchDetails.subflow:FCMComposite_1_6\",\n            \"APPL_Common_AgentBranchInfo:retrieveAgentBranchDetails.subflow:FCMComposite_1_5\"\n        ],\n        [\n            \"APPL_Common_AgentBranchInfo:retrieveAgentBranchDetails.subflow:FCMComposite_1_5\",\n            \"ESB_COMMON_UTIL_MFP:CommonComponent_Audit.subflow:InTerminal.Input\"\n        ]\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Step-11 = /generate-report",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-request-id",
+								"value": "1234",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:9090/api/htkpgx2472sz/generate-report?user_name=admin&job_id=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"htkpgx2472sz",
+								"generate-report"
+							],
+							"query": [
+								{
+									"key": "user_name",
+									"value": "admin"
+								},
+								{
+									"key": "job_id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Step-All (Optional) = /retrieve-all-jobs",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-request-id",
+								"value": "1234",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:9090/api/htkpgx2472sz/retrieve-all-jobs?user_name=admin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"htkpgx2472sz",
+								"retrieve-all-jobs"
+							],
+							"query": [
+								{
+									"key": "user_name",
+									"value": "admin"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Step-Admin-1 = /update-parameter",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-request-id",
+								"value": "1234",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:9090/api/htkpgx2472sz/update-parameter?user_name=admin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"htkpgx2472sz",
+								"update-parameter"
+							],
+							"query": [
+								{
+									"key": "user_name",
+									"value": "admin"
+								},
+								{
+									"key": "jobName",
+									"value": "ABC",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Step-Admin-2 = /update-parameter",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-request-id",
+								"value": "1234",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"jobName\": \"ARC-Test\",\r\n\t\"refListener\": {\r\n\t\t\"weightType\": \"ref_listener\",\r\n\t\t\"minLimit\": 1,\r\n\t\t\"maxLimit\": 12,\r\n\t\t\"weightInfo\": [\r\n\t\t\t{\r\n\t\t\t\t\"id\": 1,\r\n\t\t\t\t\"min\": 1,\r\n\t\t\t\t\"max\": 1,\r\n\t\t\t\t\"weight\": 1\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"id\": 2,\r\n\t\t\t\t\"min\": 2,\r\n\t\t\t\t\"max\": 2,\r\n\t\t\t\t\"weight\": 2\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"id\": 3,\r\n\t\t\t\t\"min\": 3,\r\n\t\t\t\t\"max\": 5,\r\n\t\t\t\t\"weight\": 5\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"id\": 4,\r\n\t\t\t\t\"min\": 6,\r\n\t\t\t\t\"max\": 8,\r\n\t\t\t\t\"weight\": 13\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"id\": 5,\r\n\t\t\t\t\"min\": 9,\r\n\t\t\t\t\"max\": 12,\r\n\t\t\t\t\"weight\": 21\r\n\t\t\t}\r\n\t\t]\r\n\t},\r\n\t\"refMethod\": {\r\n\t\t\"weightType\": \"ref_method\",\r\n\t\t\"weightInfo\": [\r\n\t\t\t{\r\n\t\t\t\t\"id\": 1,\r\n\t\t\t\t\"type\": \"GET\",\r\n\t\t\t\t\"weight\": 1\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"id\": 2,\r\n\t\t\t\t\"type\": \"POST\",\r\n\t\t\t\t\"weight\": 1\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"id\": 3,\r\n\t\t\t\t\"type\": \"PUT\",\r\n\t\t\t\t\"weight\": 1\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"id\": 4,\r\n\t\t\t\t\"type\": \"PATCH\",\r\n\t\t\t\t\"weight\": 1\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"id\": 5,\r\n\t\t\t\t\"type\": \"DELETE\",\r\n\t\t\t\t\"weight\": 1\r\n\t\t\t}\r\n\t\t]\r\n\t},\r\n\t\"refNode\": {\r\n\t\t\"weightType\": \"ref_node\",\r\n\t\t\"minLimit\": 1,\r\n\t\t\"maxLimit\": 40,\r\n\t\t\"weightInfo\": [\r\n\t\t\t{\r\n\t\t\t\t\"id\": 1,\r\n\t\t\t\t\"min\": 1,\r\n\t\t\t\t\"max\": 5,\r\n\t\t\t\t\"weight\": 1\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"id\": 2,\r\n\t\t\t\t\"min\": 6,\r\n\t\t\t\t\"max\": 10,\r\n\t\t\t\t\"weight\": 2\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"id\": 3,\r\n\t\t\t\t\"min\": 11,\r\n\t\t\t\t\"max\": 15,\r\n\t\t\t\t\"weight\": 5\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"id\": 4,\r\n\t\t\t\t\"min\": 16,\r\n\t\t\t\t\"max\": 20,\r\n\t\t\t\t\"weight\": 13\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"id\": 5,\r\n\t\t\t\t\"min\": 21,\r\n\t\t\t\t\"max\": 40,\r\n\t\t\t\t\"weight\": 21\r\n\t\t\t}\r\n\t\t]\r\n\t},\r\n\t\"refConnector\": {\r\n\t\t\"weightType\": \"ref_connector\",\r\n\t\t\"minLimit\": 1,\r\n\t\t\"maxLimit\": 12,\r\n\t\t\"weightInfo\": [\r\n\t\t\t{\r\n\t\t\t\t\"id\": 1,\r\n\t\t\t\t\"min\": 1,\r\n\t\t\t\t\"max\": 1,\r\n\t\t\t\t\"weight\": 1\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"id\": 2,\r\n\t\t\t\t\"min\": 2,\r\n\t\t\t\t\"max\": 2,\r\n\t\t\t\t\"weight\": 2\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"id\": 3,\r\n\t\t\t\t\"min\": 3,\r\n\t\t\t\t\"max\": 5,\r\n\t\t\t\t\"weight\": 5\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"id\": 4,\r\n\t\t\t\t\"min\": 6,\r\n\t\t\t\t\"max\": 8,\r\n\t\t\t\t\"weight\": 13\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"id\": 5,\r\n\t\t\t\t\"min\": 9,\r\n\t\t\t\t\"max\": 12,\r\n\t\t\t\t\"weight\": 21\r\n\t\t\t}\r\n\t\t]\r\n\t},\r\n\t\"refNodeProto\": {\r\n\t\t\"weightType\": \"ref_node_proto\",\r\n\t\t\"minLimit\": 1,\r\n\t\t\"maxLimit\": 12,\r\n\t\t\"weightInfo\": [\r\n\t\t\t{\r\n\t\t\t\t\"id\": 1,\r\n\t\t\t\t\"min\": 1,\r\n\t\t\t\t\"max\": 1,\r\n\t\t\t\t\"weight\": 1\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"id\": 2,\r\n\t\t\t\t\"min\": 2,\r\n\t\t\t\t\"max\": 2,\r\n\t\t\t\t\"weight\": 2\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"id\": 3,\r\n\t\t\t\t\"min\": 3,\r\n\t\t\t\t\"max\": 5,\r\n\t\t\t\t\"weight\": 5\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"id\": 4,\r\n\t\t\t\t\"min\": 6,\r\n\t\t\t\t\"max\": 8,\r\n\t\t\t\t\"weight\": 13\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"id\": 5,\r\n\t\t\t\t\"min\": 9,\r\n\t\t\t\t\"max\": 12,\r\n\t\t\t\t\"weight\": 21\r\n\t\t\t}\r\n\t\t]\r\n\t},\r\n\t\"refTransformNode\": {\r\n\t\t\"weightType\": \"ref_transform_node\",\r\n\t\t\"minLimit\": 1,\r\n\t\t\"maxLimit\": 12,\r\n\t\t\"weightInfo\": [\r\n\t\t\t{\r\n\t\t\t\t\"id\": 1,\r\n\t\t\t\t\"min\": 1,\r\n\t\t\t\t\"max\": 1,\r\n\t\t\t\t\"weight\": 1\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"id\": 2,\r\n\t\t\t\t\"min\": 2,\r\n\t\t\t\t\"max\": 2,\r\n\t\t\t\t\"weight\": 2\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"id\": 3,\r\n\t\t\t\t\"min\": 3,\r\n\t\t\t\t\"max\": 5,\r\n\t\t\t\t\"weight\": 5\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"id\": 4,\r\n\t\t\t\t\"min\": 6,\r\n\t\t\t\t\"max\": 8,\r\n\t\t\t\t\"weight\": 13\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"id\": 5,\r\n\t\t\t\t\"min\": 9,\r\n\t\t\t\t\"max\": 12,\r\n\t\t\t\t\"weight\": 21\r\n\t\t\t}\r\n\t\t]\r\n\t},\r\n\t\"refTransformLoc\": {\r\n\t\t\"weightType\": \"ref_transform_loc\",\r\n\t\t\"minLimit\": 1,\r\n\t\t\"maxLimit\": 3000,\r\n\t\t\"weightInfo\": [\r\n\t\t\t{\r\n\t\t\t\t\"id\": 1,\r\n\t\t\t\t\"min\": 1,\r\n\t\t\t\t\"max\": 20,\r\n\t\t\t\t\"weight\": 5\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"id\": 2,\r\n\t\t\t\t\"min\": 21,\r\n\t\t\t\t\"max\": 50,\r\n\t\t\t\t\"weight\": 13\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"id\": 3,\r\n\t\t\t\t\"min\": 51,\r\n\t\t\t\t\"max\": 100,\r\n\t\t\t\t\"weight\": 34\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"id\": 4,\r\n\t\t\t\t\"min\": 101,\r\n\t\t\t\t\"max\": 400,\r\n\t\t\t\t\"weight\": 55\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"id\": 5,\r\n\t\t\t\t\"min\": 401,\r\n\t\t\t\t\"max\": 3000,\r\n\t\t\t\t\"weight\": 75\r\n\t\t\t}\r\n\t\t]\r\n\t},\r\n\t\"refTransformLoop\": {\r\n\t\t\"weightType\": \"ref_transform_loop\",\r\n\t\t\"minLimit\": 1,\r\n\t\t\"maxLimit\": 25,\r\n\t\t\"weightInfo\": [\r\n\t\t\t{\r\n\t\t\t\t\"id\": 1,\r\n\t\t\t\t\"min\": 1,\r\n\t\t\t\t\"max\": 1,\r\n\t\t\t\t\"weight\": 1\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"id\": 2,\r\n\t\t\t\t\"min\": 2,\r\n\t\t\t\t\"max\": 3,\r\n\t\t\t\t\"weight\": 5\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"id\": 3,\r\n\t\t\t\t\"min\": 4,\r\n\t\t\t\t\"max\": 8,\r\n\t\t\t\t\"weight\": 9\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"id\": 4,\r\n\t\t\t\t\"min\": 9,\r\n\t\t\t\t\"max\": 15,\r\n\t\t\t\t\"weight\": 15\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"id\": 5,\r\n\t\t\t\t\"min\": 16,\r\n\t\t\t\t\"max\": 25,\r\n\t\t\t\t\"weight\": 25\r\n\t\t\t}\r\n\t\t]\r\n\t},\r\n\t\"refRoutePath\": {\r\n\t\t\"weightType\": \"ref_route_path\",\r\n\t\t\"minLimit\": 1,\r\n\t\t\"maxLimit\": 25,\r\n\t\t\"weightInfo\": [\r\n\t\t\t{\r\n\t\t\t\t\"id\": 1,\r\n\t\t\t\t\"min\": 1,\r\n\t\t\t\t\"max\": 1,\r\n\t\t\t\t\"weight\": 1\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"id\": 2,\r\n\t\t\t\t\"min\": 2,\r\n\t\t\t\t\"max\": 3,\r\n\t\t\t\t\"weight\": 5\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"id\": 3,\r\n\t\t\t\t\"min\": 4,\r\n\t\t\t\t\"max\": 8,\r\n\t\t\t\t\"weight\": 9\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"id\": 4,\r\n\t\t\t\t\"min\": 9,\r\n\t\t\t\t\"max\": 15,\r\n\t\t\t\t\"weight\": 15\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"id\": 5,\r\n\t\t\t\t\"min\": 16,\r\n\t\t\t\t\"max\": 25,\r\n\t\t\t\t\"weight\": 25\r\n\t\t\t}\r\n\t\t]\r\n\t},\r\n\t\"refSchema\": {\r\n\t\t\"weightType\": \"ref_schema\",\r\n\t\t\"minLimit\": 1,\r\n\t\t\"maxLimit\": 25,\r\n\t\t\"weightInfo\": [\r\n\t\t\t{\r\n\t\t\t\t\"id\": 1,\r\n\t\t\t\t\"min\": 1,\r\n\t\t\t\t\"max\": 1,\r\n\t\t\t\t\"weight\": 1\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"id\": 2,\r\n\t\t\t\t\"min\": 2,\r\n\t\t\t\t\"max\": 3,\r\n\t\t\t\t\"weight\": 5\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"id\": 3,\r\n\t\t\t\t\"min\": 4,\r\n\t\t\t\t\"max\": 8,\r\n\t\t\t\t\"weight\": 9\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"id\": 4,\r\n\t\t\t\t\"min\": 9,\r\n\t\t\t\t\"max\": 15,\r\n\t\t\t\t\"weight\": 15\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"id\": 5,\r\n\t\t\t\t\"min\": 16,\r\n\t\t\t\t\"max\": 25,\r\n\t\t\t\t\"weight\": 25\r\n\t\t\t}\r\n\t\t]\r\n\t},\r\n\t\"refEstmitationEffort\": [\r\n\t\t{\r\n\t\t\t\"scoreMin\": 1,\r\n\t\t\t\"scoreMax\": 22,\r\n\t\t\t\"complexityLevel\": \"Simple\",\r\n\t\t\t\"estimatedHours\": 45\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"scoreMin\": 23,\r\n\t\t\t\"scoreMax\": 54,\r\n\t\t\t\"complexityLevel\": \"Medium\",\r\n\t\t\t\"estimatedHours\": 90\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"id\": 3,\r\n\t\t\t\"scoreMin\": 55,\r\n\t\t\t\"scoreMax\": 80,\r\n\t\t\t\"complexityLevel\": \"Complex\",\r\n\t\t\t\"estimatedHours\": 135\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"scoreMin\": 81,\r\n\t\t\t\"scoreMax\": 110,\r\n\t\t\t\"complexityLevel\": \"Very complex\",\r\n\t\t\t\"estimatedHours\": 225\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"scoreMin\": 111,\r\n\t\t\t\"scoreMax\": 180,\r\n\t\t\t\"complexityLevel\": \"Ultra complex\",\r\n\t\t\t\"estimatedHours\": 280\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"scoreMin\": 181,\r\n\t\t\t\"scoreMax\": 250,\r\n\t\t\t\"complexityLevel\": \"Above complex\",\r\n\t\t\t\"estimatedHours\": 350\r\n\t\t}\r\n\t]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/api/htkpgx2472sz/update-parameter?user_name=admin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"htkpgx2472sz",
+								"update-parameter"
+							],
+							"query": [
+								{
+									"key": "user_name",
+									"value": "admin"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Step-Admin-3 = /role-management",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-request-id",
+								"value": "1234"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:9090/api/htkpgx2472sz/role-management?user_name=admin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"htkpgx2472sz",
+								"role-management"
+							],
+							"query": [
+								{
+									"key": "user_name",
+									"value": "admin"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Step-Admin-4 = /role-management",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-request-id",
+								"value": "1234"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n\t{\r\n\t\t\"userName\" : \"rounaksaha\",\r\n        \"activeStatus\" : 1,\r\n        \"roleId\" : 1\r\n\t}\r\n]"
+						},
+						"url": {
+							"raw": "http://localhost:9090/api/htkpgx2472sz/role-management?user_name=admin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"htkpgx2472sz",
+								"role-management"
+							],
+							"query": [
+								{
+									"key": "user_name",
+									"value": "admin"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
